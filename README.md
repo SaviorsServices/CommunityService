@@ -10,7 +10,7 @@ Este repositório contém todos os artefatos desenvolvidos para a disciplina de 
 |Amanda Bezerra||[amandabezerra](https://github.com/amandabezerra)
 |Eduardo Júnio Veloso Rodrigues|14/0168192|[Eduardojvr](https://github.com/Eduardojvr)
 |Thiago Ribeiro||[thiagorpereira](https://github.com/thiagorpereira)
-|Ulysses Bernard||[ulyssesBML](https://github.com/ulyssesBML)
+|Ulysses Bernard|13/0136026|[ulyssesBML](https://github.com/ulyssesBML)
 |Vinícius Cantuária|14/0165169|[cantuariavc](https://github.com/cantuariavc)
 |Weyler Almeida||[WeylerAlmeida](https://github.com/WeylerAlmeida)
 |Ysanne Ravena da Costa Macêdo||[](https://github.com/)
