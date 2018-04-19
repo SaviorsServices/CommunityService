@@ -1,6 +1,7 @@
 
-<p align="center"><a href="image" target="_blank"><img width="470"src="https://github.com/SaviorsServices/CommunityService/blob/master/images/logo/comunity.jpg"></a></p>
-<p align="center">
+<p align="center"><a href="image" target="_blank"><img width="600"src="https://github.com/SaviorsServices/CommunityService/blob/master/images/logo/comunity.jpg"></a></p>
+
+[![Build Status](https://travis-ci.org/SaviorsServices/CommunityService.svg?branch=master)](https://travis-ci.org/SaviorsServices/CommunityService)
   
 <br>
   
