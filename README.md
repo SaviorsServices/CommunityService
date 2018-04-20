@@ -122,6 +122,5 @@ Esse comando irá gerar uma pasta contendo um arquivo html(index.html) que apres
 <a href='https://github.com/SaviorsServices/CommunityService/blob/master/images/equipe/Ulysses.png'><img width="130" src='https://github.com/SaviorsServices/CommunityService/blob/master/images/equipe/Ulysses.png' alt='python' /></a>
 <a href='https://github.com/SaviorsServices/CommunityService/blob/master/images/equipe/Thiago.png'><img width="130" src='https://github.com/SaviorsServices/CommunityService/blob/master/images/equipe/Thiago.png' alt='python' /></a>
 <a href='https://github.com/SaviorsServices/CommunityService/blob/master/images/equipe/Amanda.png'><img width="130" src='https://github.com/SaviorsServices/CommunityService/blob/master/images/equipe/Amanda.png' alt='python' /></a>
-
-
-
+<a href='https://github.com/SaviorsServices/CommunityService/blob/master/images/equipe/ravena.jpeg'><img width="130" src='https://github.com/SaviorsServices/CommunityService/blob/master/images/equipe/ravena.jpeg' alt='python' /></a>
+<a href='https://github.com/SaviorsServices/CommunityService/blob/master/images/equipe/weyler.png'><img width="130" src='https://github.com/SaviorsServices/CommunityService/blob/master/images/equipe/weyler.png' alt='python' /></a>
