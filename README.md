@@ -86,7 +86,8 @@ Espere até que todos os serviços estejam disponíveis, acesse a página inicia
 
 ## ℹ️ Deploy
 
-<p align="justify">O deploy da aplicação é feito de forma automatizada por meio da integração contínua (Travis CI) que é responsável por verificar a cobertura de teste  e realizar o deploy junto ao servidor de hospedagem Heroku.</p> <br>
+<p align="justify">O deploy da aplicação é feito de forma automatizada por meio da integração contínua (Travis CI) que é responsável por verificar a cobertura de teste  e realizar o deploy junto ao servidor de hospedagem Heroku.</p> 
+🌎 Servidor: https://comunityservice.herokuapp.com/
 
 ## ℹ️ Testes
 
