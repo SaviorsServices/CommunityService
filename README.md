@@ -2,7 +2,12 @@
 <p align="center"><a href="image" target="_blank"><img width="600"src="https://github.com/SaviorsServices/CommunityService/blob/master/images/logo/comunity.jpg"></a></p>
 
 [![Build Status](https://travis-ci.org/SaviorsServices/CommunityService.svg?branch=master)](https://travis-ci.org/SaviorsServices/CommunityService)
-  
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
+<a href='https://www.python.org/'><img src='https://img.shields.io/badge/Made%20with-Python-1f425f.svg' alt='python' /></a> 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/377ae478ff41492d98f33eca0330ab3f)](https://www.codacy.com/app/Eduardojvr/CommunityService?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=SaviorsServices/CommunityService&amp;utm_campaign=Badge_Grade)
+[![Maintainability](https://api.codeclimate.com/v1/badges/509f819aa5a929248713/maintainability)](https://codeclimate.com/github/SaviorsServices/CommunityService/maintainability)
+  <a href="https://codeclimate.com/github/SaviorsServices/CommunityService"><img src="https://codeclimate.com/github/SaviorsServices/CommunityService/badges/issue_count.svg" alt="Issue Count"></a> 
+
 <br>
   
 ## ℹ️ Sobre o projeto
