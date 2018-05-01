@@ -13,7 +13,7 @@
 |**Data de início**|06/04/2018|
 |**Data de término**|28/04/2018|
 |**Duração**|3 semanas|
-|**Pontos planejados**|38|
+|**Pontos planejados**|44|
 |**Dívidas Técnicas**|0|
 
 ## 2 - Papéis
@@ -39,4 +39,5 @@
 |[#3](https://github.com/SaviorsServices/CommunityService/issues/3)| Configurar Ambiente docker|5|Eduardo Júnio|
 |[#1](https://github.com/SaviorsServices/CommunityService/issues/1)|Termo de abertura do projeto|2|Eduardo Júnio|
 |[#5](https://github.com/SaviorsServices/CommunityService/issues/5)|Cadastro de Usuario|13|Amanda Bezerra|
-
+|[#19](https://github.com/SaviorsServices/CommunityService/issues/19)| Documento de Requisitos|3| Thiago, Ravena, Vinicius e Weyler|
+|[#18](https://github.com/SaviorsServices/CommunityService/issues/18)| Diagrama de classes|3|Ulysses|
