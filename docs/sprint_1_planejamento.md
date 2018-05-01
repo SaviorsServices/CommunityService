@@ -1,3 +1,5 @@
+# ✅ Planejamento da sprint 1
+
 ## Sumário
 
 1. [Informações básicas](#1---informações-básicas)
@@ -22,11 +24,11 @@
 |:---:|:--:|:--:|
 |DevOps e desenvolvedor|Eduardo Júnio|[@Eduardojvr](https://github.com/Eduardojvr)|
 |Scrum e desenvolvedor|Ulysses| @UlyssesBML|
-|PO e desenvolvedor| Thiago| |
-|Desenvolvedor| Weyler||
-|DevOps| Amanda|
-|Desenvolvedor|Vinicius||
-|Desenvolvedor|Ravena||
+|PO e desenvolvedor| Thiago| @thiago|
+|Desenvolvedor| Weyler| @weyler|
+|DevOps e desenvolvedor| Amanda| @Amanda|
+|Desenvolvedor|Vinicius| @vinicius|
+|Desenvolvedor|Ravena|@ravena|
 
 ## 3 - Histórias planejadas
 
