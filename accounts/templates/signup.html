@@ -7,9 +7,8 @@
     <div class="row h-100">
       <div class="col-12 my-auto">
         <div class="masthead-content text-white py-5 py-md-0">
-          <h1>Entrar</h1>
+          <h1>Cadastrar</h1>
           <form method="post">
-            {% csrf_token %}
             {% csrf_token %}
             {% for field in form %}
             <br>
@@ -17,12 +16,11 @@
             <div class="">{{ field }}</div>
             {% endfor %}
             <br>
-            <button type="submit">Entrar</button>
+            <button type="submit">Cadastrar</button>
           </form>    
         </div>
       </div>
     </div>
   </div>
 </div>
-{% endblock content %}
-
+{% endblock %}
