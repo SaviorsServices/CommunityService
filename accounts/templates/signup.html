@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="masthead">
+  <div class="masthead-bg"></div>
+  <div class="container h-100">
+    <div class="row h-100">
+      <div class="col-12 my-auto">
+        <div class="masthead-content text-white py-5 py-md-0">
+          <h1>Cadastrar</h1>
+          <form method="post">
+            {% csrf_token %}
+            {% if form.errors %}
+            <!-- Error messaging -->
+            <div id="errors">
+              <div class="inner">
+                <p>There were some errors in the information you entered. Please correct the following:</p>
+                {{ form.non_field_errors }}
+                <ul>
+                  {% for field in form %}
+                    {% if field.errors %}<li>{{ field.label }}: {{ field.errors|striptags }}</li>{% endif %}
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+            <!-- /Error messaging -->
+            {% endif %}
+            {% for field in form %}
+            <br>
+            <strong><div class="">{{ field.label }}</div></strong>
+            <div class="">{{ field }}</div>
+            {% endfor %}
+            <br>
+            <button type="submit">Cadastrar</button>
+          </form>    
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

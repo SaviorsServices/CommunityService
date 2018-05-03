@@ -89,6 +89,14 @@ Para rodar a aplicação, entre na pasta do projeto em que está localizado o __
 ```
 Espere até que todos os serviços estejam disponíveis, acesse a página inicial do projeto com o seguinte endereço: https://localhost:8000  <br>
 
+### Criar super usuário
+Crie um super usuário para utilizar a aplicação com o seguinte comando:
+
+```
+  docker-compose exec -it  "id do container"  python manage.py createsuperuser
+```
+
+
 ## ℹ️ Deploy
 
 <p align="justify">O deploy da aplicação é feito de forma automatizada por meio da integração contínua (Travis CI) que é responsável por verificar a cobertura de teste  e realizar o deploy junto ao servidor de hospedagem Heroku.</p> 
