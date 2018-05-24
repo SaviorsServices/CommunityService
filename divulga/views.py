@@ -19,3 +19,11 @@ def formevent(request):
         divulgacao.save()
         return render(request , 'index.html')
     return render(request , 'formevent.html')
+
+def mapa(request):
+    return render(request, 'mapa.html')
+
+
+def servicolist(request):
+    div = Divulgacoes.objects.all()
+    return render(request, 'servicolist.html', {'div':div})
