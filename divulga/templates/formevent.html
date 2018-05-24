@@ -1,36 +1,53 @@
+{% extends 'base.html' %}
 
+{% block content %}
+
+<style type="text/css">
+#form{
+    background-color: rgba(76, 78, 78, 0.1);
+    border-left: 20px;
+    border-radius: 30px;
+    border:30px solid transparent;
+    margin: 10%;
+    margin-top: 1%
+}
+
+</style>
+
+<div align="center" id="form">
           <form method="post">
             {% csrf_token %}
-            <form method="post">
-                <label>Nome do evento: </label><br>
-                <input id="nomeEvento" type="text" name="nomeEvento" value=""><br><br>
+                <label>Nome do evento </label><br>
+                <input style="border-radius: 5px; width: 30%"  id="nomeEvento" type="text" name="nomeEvento" value=""><br>
 
                 <label>Cidade </label><br>
-                <input id="cidade" type="text" name="cidade" value=""><br><br>
+                <input style="border-radius: 5px; width: 30%"  id="cidade" type="text" name="cidade" value="" ><br>
 
                 <label>Bairro </label><br>
-                <input id="bairro" type="text" name="bairro" value=""><br><br>
+                <input style="border-radius: 5px; width: 30%"  id="bairro" type="text" name="bairro" value=""><br>
 
                 <label>Endereço </label><br>
-                <input id="endereco" type="text" name="endereco" value=""><br><br>
+                <input style="border-radius: 5px; width: 30%"  id="endereco" type="text" name="endereco" value=""><br>
 
-                <label>CEP: </label><br>
-                <input id="cep" type="text" name="cep" value=""><br><br>
+                <label>CEP </label><br>
+                <input style="border-radius: 5px; width: 30%"  id="cep" type="text" name="cep" value=""><br>
 
-                <label>Início do evento: </label><br>
-                <input id="horarioInicio" type="text" name="horarioInicio" value=""><br><br>
+                <label>Início do evento </label><br>
+                <input style="border-radius: 5px; width: 30%"  id="horarioInicio" type="text" name="horarioInicio" value=""><br>
 
                 <label>Categoria do evento: </label><br>
-                <input id="categoria" type="text" name="categoria" value=""><br><br>
+                <input style="border-radius: 5px; width: 30%" id="categoria" type="text" name="categoria" value=""><br>
 
                 <label>Fim do evento: </label><br>
-                <input id="horarioFim" type="text" name="horarioFim" value=""><br><br>
+                <input style="border-radius: 5px; width: 30%" id="horarioFim" type="text" name="horarioFim" value=""><br>
 
-                <label>Data: </label><br>
-                <input id="data" type="text" name="data" value=""><br><br>
+                <label>Data </label><br>
+                <input style="border-radius: 5px; width: 30%"  id="data" type="text" name="data" value=""><br>
 
-                <label>Telefone para contato: </label><br>
-                <input id="telefone" type="text" name="telefone" value=""><br><br>
+                <label>Telefone para contato </label><br>
+                <input style="border-radius: 5px; width: 30%"  id="telefone" type="text" name="telefone" value=""><br><br>
 
-                <input type="submit" value="Cadastrar">
+                <input style="border-radius: 5px; width: 30%"  class="btn btn-info btn-block" type="submit" value="Cadastrar">
             </form>
+</div>
+            {% endblock content %}
