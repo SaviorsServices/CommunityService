@@ -1,0 +1,24 @@
+
+          <form method="post">
+            {% csrf_token %}
+            <form method="post">
+                <label>Nome do evento: </label><br>
+                <input id="nomeEvento" type="text" name="nomeEvento" value=""><br><br>
+
+                <label>Cidade </label><br>
+                <input id="cidade" type="text" name="cidade" value=""><br><br>
+
+                <label>Bairro </label><br>
+                <input id="bairro" type="text" name="bairro" value=""><br><br>
+
+                <label>Endereço </label><br>
+                <input id="endereco" type="text" name="endereco" value=""><br><br>
+
+                <label>CEP: </label><br>
+                <input id="cep" type="text" name="cep" value=""><br><br>
+
+                <label>Telefone para contato: </label><br>
+                <input id="telefone" type="text" name="telefone" value=""><br><br>
+
+                <input type="submit" value="Cadastrar">
+            </form>
