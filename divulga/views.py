@@ -7,6 +7,7 @@ def formevent(request):
     if request.method == 'POST':
         divulgacao = Divulgacoes()
         divulgacao.nomeEvento = request.POST['nomeEvento']
+        divulgacao.categoria = request.POST['categoria']
         divulgacao.cidade = request.POST['cidade']
         divulgacao.bairro = request.POST['bairro']
         divulgacao.endereco = request.POST['endereco']
@@ -24,6 +25,8 @@ def mapa(request):
     return render(request, 'mapa.html')
 
 
+
 def servicolist(request):
     div = Divulgacoes.objects.all()
     return render(request, 'servicolist.html', {'div':div})
+
