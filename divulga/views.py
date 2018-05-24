@@ -26,4 +26,12 @@ def mapa(request):
 
 def servicolist(request):
     div = Divulgacoes.objects.all()
+    if request.method == 'POST':
+        # id = request.POST['id']
+        event(request, 0)
     return render(request, 'servicolist.html', {'div':div})
+
+def event(request, id):
+    evento = Divulgacoes()
+    evento = Divulgacoes(filter=id)
+    return render(request, 'event.html',{'evento': evento})
