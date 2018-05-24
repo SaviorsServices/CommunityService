@@ -12,5 +12,6 @@ class Divulgacoes(models.Model):
     horarioInicio = models.CharField(max_length=20, null=False)
     horarioFim = models.CharField(max_length=20, null=False)
     data = models.CharField(max_length=20, null=False)
+    categoria = models.CharField(max_length=50, null=False)
     #data = models.DateTimeField(auto_now=False, auto_now_add=False)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
