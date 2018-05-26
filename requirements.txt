@@ -3,4 +3,5 @@ gunicorn==19.7.1
 whitenoise==3.3.1
 coverage==4.4.1
 coveralls
-
+django-polymorphic
+django-crispy-forms

@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'divulga',
+    'polymorphic',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -75,6 +77,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'saviors.wsgi.application'
 
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
