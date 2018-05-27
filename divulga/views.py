@@ -1,9 +1,10 @@
 from django.shortcuts import render
-
+import json
 from django.urls import reverse
 from django.http import HttpResponseRedirect
-
+from django.http import HttpResponse
 from .models import Divulgacoes
+import requests
 from django.contrib.auth.decorators import login_required
 from .forms import CommunityActionForm, DonationForm, HealthServiceForm, EstablishmentForm 
 
@@ -26,7 +27,17 @@ def formevent(request):
         return render(request , 'index.html')
     return render(request , 'formevent.html')
 
-def mapa(request):
+def mapa(request, id):
+    latitude = 0
+    longitude = 0
+    if request.method == "POST":
+        chave = "AIzaSyDroa8JCUm2JfRZ_7eVMb4Fqx8ufr0Mz_A"
+        div = Divulgacoes.objects.get(id=id)
+        address = div.endereco+"+"+div.cidade
+        r = requests.get("https://maps.googleapis.com/maps/api/geocode/json?address="+address+"&key="+chave)
+        if r.status_code == 200:
+            dados = json.loads(r.content)
+        return render(request, 'mapa.html')
     return render(request, 'mapa.html')
 
 

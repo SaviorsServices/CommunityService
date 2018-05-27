@@ -2,18 +2,18 @@
 <html>
   <head>
     <style>
-      #map {
+       #map {
         height: 400px;
         width: 100%;
        }
     </style>
   </head>
   <body>
-    <h3>Mapa do Serviço</h3>
+    <h3>Localização</h3>
     <div id="map"></div>
     <script>
       function initMap() {
-        var uluru = {lat: -15.7797200, lng: -47.9297200};
+        var uluru = {lat: -25.363, lng: 131.044};
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 4,
           center: uluru
@@ -25,7 +25,7 @@
       }
     </script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5yEOTooXYklhHcgtfhW9IWL8Eyhm5DuE&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDroa8JCUm2JfRZ_7eVMb4Fqx8ufr0Mz_A&callback=initMap">
     </script>
   </body>
 </html>
