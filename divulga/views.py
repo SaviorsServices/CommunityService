@@ -15,9 +15,9 @@ def formevent(request):
         divulgacao.nomeEvento = request.POST['nomeEvento']
         divulgacao.categoria = request.POST['categoria']
         divulgacao.cidade = request.POST['cidade']
-        divulgacao.bairro = request.POST['bairro']
+        #divulgacao.bairro = request.POST['bairro']
         divulgacao.endereco = request.POST['endereco']
-        divulgacao.cep = request.POST['cep']
+        #divulgacao.cep = request.POST['cep']
         divulgacao.telefone = request.POST['telefone']
         divulgacao.horarioInicio = request.POST['horarioInicio']
         divulgacao.horarioFim = request.POST['horarioFim']
@@ -37,8 +37,12 @@ def mapa(request, id):
         r = requests.get("https://maps.googleapis.com/maps/api/geocode/json?address="+address+"&key="+chave)
         if r.status_code == 200:
             dados = json.loads(r.content)
-        return render(request, 'mapa.html')
-    return render(request, 'mapa.html')
+            latitude = dados["results"][0]["geometry"]["location"]["lat"]
+            longitude = dados["results"][0]["geometry"]["location"]["lng"]
+            #print(latitude)
+            #print(longitude)
+        return render(request, 'mapa.html', {'latitude':latitude, 'longitude': longitude})
+    return render(request, 'index.html')
 
 
 
