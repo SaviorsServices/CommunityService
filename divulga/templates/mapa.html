@@ -2,20 +2,31 @@
 <html>
   <head>
     <style>
-       #map {
+      #map {
         height: 400px;
         width: 100%;
        }
     </style>
   </head>
-  <body>
-    <h3>Localização</h3>
+
+ <!-- <body> -->
+    <body id="corpo" class="container" data-1="{{ latitude }}" data-2="{{ longitude }}" >
+    
+  <h3>Mapa do evento</h3>
     <div id="map"></div>
     <script>
+    
+    
       function initMap() {
-        var uluru = {lat: -25.363, lng: 131.044};
+        var latitude = document.getElementById("corpo").getAttribute("data-1");
+        var longitude = document.getElementById("corpo").getAttribute("data-2");
+        latitude = parseFloat(latitude);
+        longitude = parseFloat(longitude);
+        alert(latitude);
+        alert(longitude);
+        var uluru = {lat: latitude, lng: longitude};
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
+          zoom: 50,
           center: uluru
         });
         var marker = new google.maps.Marker({
