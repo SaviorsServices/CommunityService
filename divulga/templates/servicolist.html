@@ -10,16 +10,17 @@
 
 </style>
 
-{% for i in div %}
+<h1>Estabelecimentos</h1>
+{% for i in estabelecimentos %}
 <div id="btn" align="center">
         {% csrf_token %}
-<a id="nomeEvento">Nome do evento: {{ i.nomeEvento }}</a><br>
-Cidade: {{  i.cidade  }}<br>
-Categoria: {{  i.categoria  }}<br>
+Nome: {{ i.name }}<br>
+Telefone: {{  i.telefone  }}<br>
 Endereço: {{  i.endereco  }}<br>
-Início: {{  i.horarioInicio  }}<br>
-Fim: {{  i.horarioFim }}<br>
-Data: {{  i.data  }}<br>
+Cidade: {{  i.cidade  }}<br>
+Início: {{  i.openHour  }}<br>
+Fim: {{  i.closeHour }}<br>
+
 <form method="POST" action="{% url 'mapa' i.id %}">
     {% csrf_token %}
 
@@ -33,7 +34,7 @@ Data: {{  i.data  }}<br>
 </div>
 
 </div>
-
 {% endfor %}
+
 
 {% endblock content %}

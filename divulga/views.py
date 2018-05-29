@@ -4,30 +4,30 @@ import json
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.http import HttpResponse
-from .models import Divulgacoes
+# from .models import Divulgacoes
 import requests
 from django.contrib.auth.decorators import login_required
 from .forms import CommunityActionForm, DonationForm, HealthServiceForm, EstablishmentForm 
 from .models import Establishment, HealthService, Donation
 
-@login_required
-def formevent(request):
-    if request.method == 'POST':
-        divulgacao = Divulgacoes()
-        divulgacao.nomeEvento = request.POST['nomeEvento']
-        divulgacao.categoria = request.POST['categoria']
-        divulgacao.cidade = request.POST['cidade']
-        #divulgacao.bairro = request.POST['bairro']
-        divulgacao.endereco = request.POST['endereco']
-        #divulgacao.cep = request.POST['cep']
-        divulgacao.telefone = request.POST['telefone']
-        divulgacao.horarioInicio = request.POST['horarioInicio']
-        divulgacao.horarioFim = request.POST['horarioFim']
-        divulgacao.data = request.POST['data']
-        divulgacao.user = request.user
-        divulgacao.save()
-        return render(request , 'index.html')
-    return render(request , 'formevent.html')
+# @login_required
+# def formevent(request):
+#     if request.method == 'POST':
+#         divulgacao = Establishment()
+#         divulgacao.nomeEvento = request.POST['nomeEvento']
+#         divulgacao.categoria = request.POST['categoria']
+#         divulgacao.cidade = request.POST['cidade']
+#         #divulgacao.bairro = request.POST['bairro']
+#         divulgacao.endereco = request.POST['endereco']
+#         #divulgacao.cep = request.POST['cep']
+#         divulgacao.telefone = request.POST['telefone']
+#         divulgacao.horarioInicio = request.POST['horarioInicio']
+#         divulgacao.horarioFim = request.POST['horarioFim']
+#         divulgacao.data = request.POST['data']
+#         divulgacao.user = request.user
+#         divulgacao.save()
+#         return render(request , 'index.html')
+#     return render(request , 'formevent.html')
 
 def mapa(request, id):
     latitude = 0
@@ -49,8 +49,10 @@ def mapa(request, id):
 
 
 def servicolist(request):
-    div = Divulgacoes.objects.all()
-    return render(request, 'servicolist.html', {'div':div})
+    estabelecimentos = Establishment.objects.all()
+    saude = HealthService.objects.all()
+    doacao = Donation.objects.all()
+    return render(request, 'servicolist.html', {'estabelecimentos':estabelecimentos,'saude':saude,'doacao':doacao})
 
 
 def create_establishment(request):

@@ -23,14 +23,12 @@
     <!-- Custom styles for this template -->
     <link href="{% static "css/coming-soon.min.css" %}" rel="stylesheet">
 
-
-    
   </head>
 
   <body>
     <!-- Barra de navegação -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a class="navbar-brand" href="{% url 'index' %}">Community Service</a>
+          <!-- <a class="navbar-brand" href="{% url 'index' %}">Community Service</a> -->
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -38,9 +36,6 @@
             <ul class="navbar-nav">
               <li class="nav-item active">
                 <a class="nav-link" href="{% url 'index' %}">Início <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Sobre</a>
               </li>
                 {% if user.is_authenticated %}
                     <li class="nav-item">
@@ -50,10 +45,22 @@
                         <a class="nav-link" href="{% url 'logout' %}">Sair</a>
                     </li>
                     <li class="nav-item">              
-                      <a class="nav-link" href="{% url 'formevent' %}">Criar evento</a>
+                      <a class="nav-link" href="{% url 'create_establishment' %}">Criar estabelecimento</a>
                   </li>
                   <li class="nav-item">              
-                      <a class="nav-link" href="{% url 'servicolist' %}">Lista de eventos</a>
+                    <a class="nav-link" href="{% url 'create_health_service' %}">Cadastrar serviço médico</a>
+                  </li>
+                    <li class="nav-item">        
+                      <a class="nav-link" href="{% url 'create_donation' %}">Cadastrar doações</a>
+                    </li>
+                      <li class="nav-item">           
+                      <a class="nav-link" href="{% url 'list_establishment' %}">Meus estabelecimentos</a>
+                  </li>
+                  <li class="nav-item">           
+                      <a class="nav-link" href="{% url 'list_health_service' %}">Meus serviços médicos</a>
+                  </li>
+                  <li class="nav-item">           
+                      <a class="nav-link" href="{% url 'list_donation' %}">Minhas doações</a>
                   </li>
                 {% else %}
                     <li class="nav-item">
