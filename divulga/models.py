@@ -41,4 +41,3 @@ class Establishment(models.Model):
     endereco = models.CharField(max_length=140, null=False)
     cep = models.CharField(max_length=10, null=False)
     community_action = models.ManyToManyField(CommunityAction,blank=True,null=True)
-
