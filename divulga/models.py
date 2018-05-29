@@ -17,11 +17,26 @@ from polymorphic.models import PolymorphicModel
 #     #data = models.DateTimeField(auto_now=False, auto_now_add=False)
 #     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
+class Establishment(models.Model):
+    name = models.CharField(max_length=50, null=False)
+    openHour = models.TimeField()
+    closeHour = models.TimeField()
+    telefone = models.CharField(max_length=15, null=False)
+    cidade = models.CharField(max_length=30, null=False)
+    bairro = models.CharField(max_length=50, null=False)
+    endereco = models.CharField(max_length=140, null=False)
+    cep = models.CharField(max_length=10, null=False)
+
+    def __str__(self):
+        return self.name
+
+
 class CommunityAction(PolymorphicModel):
     name = models.CharField(max_length=50, null=False)
-    start_date = models.DateTimeField()
-    close_date = models.DateTimeField()
+    start_date = models.DateField()
+    close_date = models.DateField()
     description = models.CharField(max_length=500, null=False) 
+    establishment = models.ManyToManyField(Establishment)
 
     def __str__(self):
         return self.name
@@ -34,17 +49,4 @@ class Donation(CommunityAction):
 class HealthService(CommunityAction):
     start_hour = models.TimeField()
     close_hour = models.TimeField()
-    
-class Establishment(models.Model):
-    name = models.CharField(max_length=50, null=False)
-    openHour = models.TimeField()
-    closeHour = models.TimeField()
-    telefone = models.CharField(max_length=15, null=False)
-    cidade = models.CharField(max_length=30, null=False)
-    bairro = models.CharField(max_length=50, null=False)
-    endereco = models.CharField(max_length=140, null=False)
-    cep = models.CharField(max_length=10, null=False)
-    community_action = models.ManyToManyField(CommunityAction,blank=True,null=True)
-
-    def __str__(self):
-        return self.name
+ 
