@@ -12,5 +12,9 @@ urlpatterns = [
     url(r'^edit_establishment/(?P<id>\d+)/$', views.edit_establishment, name='edit_establishment'),
     url(r'^edit_health_service/(?P<id>\d+)/$', views.edit_health_service, name='edit_health_service'),
     url(r'^edit_donation/(?P<id>\d+)/$', views.edit_donation, name='edit_donation'),
+    url(r'^delete_establishment/(?P<id>\d+)/$', views.delete_establishment, name='delete_establishment'),
+    url(r'^delete_health_service/(?P<id>\d+)/$', views.delete_health_service, name='delete_health_service'),
+    url(r'^delete_donation/(?P<id>\d+)/$', views.delete_donation, name='delete_donation'),
+
 
 ]

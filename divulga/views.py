@@ -134,3 +134,19 @@ def edit_donation(request, id):
     else:
         form = DonationForm(instance=donation)
         return render(request, 'establishment.html', {'form': form,'title':title})
+
+
+def delete_establishment(request, id):
+    establishment = get_object_or_404(Establishment, id=id)
+    establishment.delete()
+    return render(request, 'delete.html')
+
+def delete_health_service(request, id):
+    health_service = get_object_or_404(HealthService, id=id)
+    health_service.delete()
+    return render(request, 'delete.html')
+
+def delete_donation(request, id):
+    delete_donation = get_object_or_404(Donation, id=id)
+    delete_donation.delete()
+    return render(request, 'delete.html')
