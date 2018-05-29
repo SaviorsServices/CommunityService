@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content%}
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Endereço</th>
+      </tr>
+    </thead>
+    <tbody>
+	{% for establishment in establishments %}
+	<tr>
+            <td>{{establishment.id}}</td>
+            <td>{{establishment}}</td>
+            <td>{{establishment.endereco}}</td>
+	    <td><a href="{% url 'edit_establishment' establishment.id %}" class="glyphicon glyphicon-pencil">Editar</a></td>
+	    <td><a href="{% url 'delete_establishment' establishment.id %}" class="glyphicon glyphicon-trash">Remover</a></td>
+	</tr>
+	{% endfor %}
+    </tbody>
+  </table>
+
+    <h1>{{establishment}}</h1>
+    
+{% endblock content %}

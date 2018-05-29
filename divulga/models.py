@@ -22,7 +22,11 @@ class CommunityAction(PolymorphicModel):
     start_date = models.DateTimeField()
     close_date = models.DateTimeField()
     description = models.CharField(max_length=500, null=False) 
-    
+
+    def __str__(self):
+        return self.name
+
+
 class Donation(CommunityAction):
     item_name = models.CharField(max_length=50, null=False)
     amount = models.IntegerField()
@@ -30,7 +34,7 @@ class Donation(CommunityAction):
 class HealthService(CommunityAction):
     start_hour = models.TimeField()
     close_hour = models.TimeField()
-
+    
 class Establishment(models.Model):
     name = models.CharField(max_length=50, null=False)
     openHour = models.TimeField()
@@ -41,3 +45,6 @@ class Establishment(models.Model):
     endereco = models.CharField(max_length=140, null=False)
     cep = models.CharField(max_length=10, null=False)
     community_action = models.ManyToManyField(CommunityAction,blank=True,null=True)
+
+    def __str__(self):
+        return self.name

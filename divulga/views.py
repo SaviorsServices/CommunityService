@@ -150,3 +150,16 @@ def delete_donation(request, id):
     delete_donation = get_object_or_404(Donation, id=id)
     delete_donation.delete()
     return render(request, 'delete.html')
+
+def list_establishment(request):
+    establishments = Establishment.objects.all()
+    print(establishments)
+    return render(request, 'list_establishment.html', {"establishments": establishments})
+
+def list_health_service(request):
+    health_services = HealthService.objects.all() 
+    return render(request, 'list_health_service.html', {"health_services": health_services})
+
+def list_donation(request):
+    donations = Donation.objects.all()
+    return render(request, 'list_donation.html', {"donations": donations})
