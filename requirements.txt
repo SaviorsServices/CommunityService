@@ -5,3 +5,4 @@ coverage==4.4.1
 coveralls
 django-polymorphic
 django-crispy-forms
+django-polymorphic

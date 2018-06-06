@@ -165,3 +165,5 @@ def list_health_service(request):
 def list_donation(request):
     donations = Donation.objects.all()
     return render(request, 'list_donation.html', {"donations": donations})
+
+

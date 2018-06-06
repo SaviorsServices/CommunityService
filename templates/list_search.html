@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content%}
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Endereço</th>
+      </tr>
+    </thead>
+    <tbody>
+	{% for service in services_list %}
+	<tr>
+            <td>{{service.id}}</td>
+            <td>{{service}}</td>
+            <td>{{service.nome}}</td>
+	</tr>
+	{% endfor %}
+    </tbody>
+  </table>
+
+    <h1>{{service}}</h1>
+    
+{% endblock content %}

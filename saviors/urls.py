@@ -24,4 +24,5 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('divulga/', include('divulga.urls')),    
     url(r'^$', views.index, name='index'),
+    url(r'^list_search/', views.search_service, name='search_services'),
 ]
