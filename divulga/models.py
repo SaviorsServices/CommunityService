@@ -38,6 +38,24 @@ class CommunityAction(PolymorphicModel):
     description = models.CharField(max_length=500, null=False) 
     establishment = models.ManyToManyField(Establishment)
 
+    SAUDE = 'SAUDE'
+    EDUCACIONAL = 'EDUCACIONAL'
+    CORTESDECABELO = 'CORTE DE CABELO'
+    OUTRACATEGORIA = 'OUTRA CATEGORIA'
+
+    CATEGORY_OF_SERVICES = (
+        (SAUDE, 'Saude'),
+        (EDUCACIONAL, 'Educacional'),
+        (CORTESDECABELO, 'Corte de cabelo'),
+        (OUTRACATEGORIA, 'Outra Categoria'),
+
+    )
+    category = models.CharField(
+        max_length=40,
+        choices=CATEGORY_OF_SERVICES,
+        default=SAUDE,
+    )
+
     def __str__(self):
         return self.name
 

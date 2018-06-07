@@ -72,7 +72,7 @@ def create_establishment(request):
 from .forms import CommunityActionForm, DonationForm, HealthServiceForm, EstablishmentForm 
     
 def create_health_service(request):
-    title = "Cadastrar Serviço de Saude"
+    title = "Cadastrar Serviço"
     if request.method == "POST":
         form = HealthServiceForm(request.POST)
         if form.is_valid():
@@ -165,3 +165,5 @@ def list_health_service(request):
 def list_donation(request):
     donations = Donation.objects.all()
     return render(request, 'list_donation.html', {"donations": donations})
+
+

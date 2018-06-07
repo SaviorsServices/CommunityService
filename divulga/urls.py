@@ -3,6 +3,7 @@ from . import views
 
 
 urlpatterns = [
+
     # url(r'^formevent/$', views.formevent, name='formevent'),
     url(r'^mapa/(?P<id>\d+)/$', views.mapa, name='mapa'),
     url(r'^servicolist/$', views.servicolist, name='servicolist'),
@@ -24,5 +25,6 @@ urlpatterns = [
     url(r'^list_establishment/', views.list_establishment, name='list_establishment'),
     url(r'^list_health_service/', views.list_health_service, name='list_health_service'),
     url(r'^list_donation/', views.list_donation, name='list_donation'),
+
 
 ]
