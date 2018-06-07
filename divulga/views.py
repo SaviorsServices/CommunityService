@@ -72,7 +72,7 @@ def create_establishment(request):
 from .forms import CommunityActionForm, DonationForm, HealthServiceForm, EstablishmentForm 
     
 def create_health_service(request):
-    title = "Cadastrar Serviço de Saude"
+    title = "Cadastrar Serviço"
     if request.method == "POST":
         form = HealthServiceForm(request.POST)
         if form.is_valid():

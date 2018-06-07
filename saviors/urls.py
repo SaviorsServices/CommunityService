@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from saviors import views
 from django.conf.urls import url
+#from saviors.views import ServiceSearchListView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,5 +25,6 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('divulga/', include('divulga.urls')),    
     url(r'^$', views.index, name='index'),
-    url(r'^list_search/', views.search_service, name='search_services'),
+    url(r'^list_search/', views.search_service_name, name='search_services'),
+    url(r'^list_search_category/', views.search_service_category, name='search_services'),
 ]

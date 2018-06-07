@@ -8,15 +8,23 @@
       <tr>
         <th>Id</th>
         <th>Nome</th>
-        <th>Endereço</th>
+        <th>Inicio</th>
+        <th>Fim</th>
+        <th>Categoria</th>
+        <th>Estabelecimento</th>
       </tr>
     </thead>
     <tbody>
 	{% for service in services_list %}
 	<tr>
             <td>{{service.id}}</td>
-            <td>{{service}}</td>
-            <td>{{service.nome}}</td>
+            <td>{{service.name}}</td>
+            <td>{{service.start_date}}</td>
+            <td>{{service.close_date}}</td>
+            <td>{{service.category}}</td>
+            <td>{{service.establishment}}</td>
+            
+
 	</tr>
 	{% endfor %}
     </tbody>

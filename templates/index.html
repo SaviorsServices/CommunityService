@@ -13,14 +13,18 @@
           <p class="mb-5">Aqui você encontra pontos de atendimentos médicos gratuitos!
             <strong></strong></p>
           <div class="input-group input-group-newsletter">
-            <form method='GET' action='/list_search/'>
+            <form method='GET' action='/list_search'>
             <input type="text" name="q" class="form-control" placeholder="Qual serviço procura?" value="{{ request.GET.q }}" aria-label="busca" aria-describedby="basic-addon">
             <div class="input-group-append">
               <input type="submit" value="Buscar" class="btn btn-secondary" href="{% url 'list_donation' %}" type="button"/n>
-            </div>
-            </form>
           </div>
-        </div>
+        </form>
+      </div>
+
+      <div class="input-group input-group-newsletter">
+        <form method='GET' action='/list_search_category/'>
+          <button type="text" name="SAUDE" class="form-control" placeholder="Qual serviço procura?" value="saude" aria-label="saude" aria-describedby="basic-addon">Saude</button>
+        </form>
       </div>
     </div>
   </div>

@@ -26,7 +26,6 @@ class Establishment(models.Model):
     bairro = models.CharField(max_length=50, null=False)
     endereco = models.CharField(max_length=140, null=False)
     cep = models.CharField(max_length=10, null=False)
-    categoria = models.CharField(max_length=50, null=False)
 
     def __str__(self):
         return self.name
@@ -38,6 +37,21 @@ class CommunityAction(PolymorphicModel):
     close_date = models.DateField()
     description = models.CharField(max_length=500, null=False) 
     establishment = models.ManyToManyField(Establishment)
+
+    SAUDE = 'SAUDE'
+    EDUCACIONAL = 'EDUCACIONAL'
+    CATEGORIA2 = 'C2'
+
+    CATEGORY_OF_SERVICES = (
+        (SAUDE, 'Saude'),
+        (EDUCACIONAL, 'Educacional'),
+        (CATEGORIA2, 'Categoria2'),
+    )
+    category = models.CharField(
+        max_length=40,
+        choices=CATEGORY_OF_SERVICES,
+        default=SAUDE,
+    )
 
     def __str__(self):
         return self.name
