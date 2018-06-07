@@ -44,6 +44,21 @@
                     <li class="nav-item">              
                         <a class="nav-link" href="{% url 'logout' %}">Sair</a>
                     </li>
+
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Categorias de Serviço
+                      </a>
+
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">     
+                        <a type="text" name="SAUDE" class="dropdown-item" href="/list_search_saude/" value="saude" aria-label="saude" aria-describedby="basic-addon">Saúde</a>
+                        <a type="text" name="EDUCACIONAL" class="dropdown-item" href="/list_search_educacional/" value="educacional" aria-label="saude" aria-describedby="basic-addon">Educacional</a>
+                        <a type="text" name="CORTE DE CABELO" class="dropdown-item" href="/list_search_corte_de_cabelo/" value="saude" aria-label="saude" aria-describedby="basic-addon">Cortes de cabelo</a>
+                        <div class="dropdown-divider"></div>
+                        <a type="text" name="OUTRA CATEGORIA" class="dropdown-item" href="/list_search_outra_categoria/" value="saude" aria-label="saude" aria-describedby="basic-addon">Outras categorias</a> 
+                      </div>
+                    </li>
+
                     <li class="nav-item">              
                       <a class="nav-link" href="{% url 'create_establishment' %}">Criar estabelecimento</a>
                   </li>

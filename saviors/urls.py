@@ -29,5 +29,5 @@ urlpatterns = [
     url(r'^list_search_saude/', views.search_service_saude, name='search_services'),
     url(r'^list_search_educacional/', views.search_service_educacional, name='search_services'),
     url(r'^list_search_corte_de_cabelo/', views.search_service_corte, name='search_services'),
-    url(r'^list_search_outra_categoria/', views.search_service_corte, name='search_services'),
+    url(r'^list_search_outra_categoria/', views.search_service_outra_categoria, name='search_services'),
 ]
