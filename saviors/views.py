@@ -37,7 +37,7 @@ def search_service_corte(request):
 
 def search_service_outra_categoria(request):
     services_list_outra_categoria = CommunityAction.objects.all()
-    categoria = 'CORTE DE CABELO'
+    categoria = 'OUTRA CATEGORIA'
     services_list_outra_categoria = services_list_outra_categoria.filter(category__icontains=categoria)
     return render(request, 'list_search.html', {"services_list": services_list_outra_categoria})
 
