@@ -8,24 +8,49 @@
   <div class="container h-100">
     <div class="row h-100">
       <div class="col-12 my-auto">
-        <div class="masthead-content text-white py-5 py-md-0">
+        <div class="masthead-content text-white py-2 py-md-3">
           <h1 class="mb-3">Community Services</h1>
-          <p class="mb-5">Aqui você encontra pontos de atendimentos médicos gratuitos!
+          <p class="mb-5">Aqui você encontra diversos pontos de serviços gratuitos, aproveite!
             <strong></strong></p>
-          <div class="input-group input-group-newsletter">
             <form method='GET' action='/list_search'>
+          <div class="input-group input-group-newsletter">
             <input type="text" name="q" class="form-control" placeholder="Qual serviço procura?" value="{{ request.GET.q }}" aria-label="busca" aria-describedby="basic-addon">
             <div class="input-group-append">
               <input type="submit" value="Buscar" class="btn btn-secondary" href="{% url 'list_donation' %}" type="button"/n>
           </div>
+      </div>
+    </form>
+
+
+    <div class="container h-100">
+      <div class="row h-100">
+        <div class="col-12 my-auto">
+      <h4 class="masthead-content text-white py-5 py-md-0 mb-5">Ou por categoria ...</h4>
+        </div>
+      </div>
+    </div>
+    
+      <div class="btn-group">
+        <form method='GET' action='/list_search_saude/'>
+          <button type="text" name="SAUDE" class="btn btn-primary" value="saude" aria-label="saude" aria-describedby="basic-addon">Saúde</button>
+        </form> 
+        <div class="pull-right">
+        <form method='GET' action='/list_search_educacional/'>
+          <button type="text" name="EDUCACIONAL" class="btn btn-success" value="educacional" aria-label="educacional" aria-describedby="basic-addon">Educacional</button>
         </form>
+        </div>
+        <div class="pull-right">
+          <form method='GET' action='/list_search_corte_de_cabelo/'>
+            <button type="text" name="CORTE DE CABELO" class="btn btn-warning">Corte de cabelo</button>
+          </form>
+        </div>
+        <div class="pull-right">
+          <form method='GET' action='/list_search_outra_categoria/'>
+            <button type="text" name="OUTRA CATEGORIA" class="btn btn-danger">Outras</button>
+          </form>
+        </div>
       </div>
 
-      <div class="input-group input-group-newsletter">
-        <form method='GET' action='/list_search_category/'>
-          <button type="text" name="SAUDE" class="form-control" placeholder="Qual serviço procura?" value="saude" aria-label="saude" aria-describedby="basic-addon">Saude</button>
-        </form>
-      </div>
     </div>
   </div>
 </div>

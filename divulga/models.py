@@ -40,12 +40,15 @@ class CommunityAction(PolymorphicModel):
 
     SAUDE = 'SAUDE'
     EDUCACIONAL = 'EDUCACIONAL'
-    CATEGORIA2 = 'C2'
+    CORTESDECABELO = 'CORTE DE CABELO'
+    OUTRACATEGORIA = 'OUTRA CATEGORIA'
 
     CATEGORY_OF_SERVICES = (
         (SAUDE, 'Saude'),
         (EDUCACIONAL, 'Educacional'),
-        (CATEGORIA2, 'Categoria2'),
+        (CORTESDECABELO, 'Corte de cabelo'),
+        (OUTRACATEGORIA, 'Outra Categoria'),
+
     )
     category = models.CharField(
         max_length=40,
