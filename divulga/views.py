@@ -1,14 +1,17 @@
+from email.mime.text import MIMEText
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render
-import json
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.http import HttpResponse
-# from .models import Divulgacoes
-import requests
 from django.contrib.auth.decorators import login_required
 from .forms import CommunityActionForm, DonationForm, HealthServiceForm, EstablishmentForm 
 from .models import Establishment, HealthService, Donation
+# from .models import Divulgacoes
+import requests
+
+import urllib, json
+import smtplib
 
 # @login_required
 # def formevent(request):
@@ -166,4 +169,29 @@ def list_donation(request):
     donations = Donation.objects.all()
     return render(request, 'list_donation.html', {"donations": donations})
 
+def enviar(nome, email, texto):
+    # mensagem = MIMEText(texto)
+    # mensagem.set_charset('utf-8')
+    mensagem['Subject'] = email
+    mensagem = 'Mensagem de:'+nome+'\n'+mensagem
+    mail = smtplib.SMTP('smtp.gmail.com', 587)
+    mail.ehlo()
+    mail.starttls()
+    mail.login('noreplayfiscae@gmail.com', 'fiscaeunb')
+    mail.sendmail('noreplayfiscae@gmail.com', email, mensagem.as_string())
+
+def fale_conosco(request):
+    if request.method == "POST":
+        nome = request.POST['nome']
+        email = request.POST['email']
+        texto = request.POST['mensagem']
+        m = MIMEText(texto)
+        m.set_charset('utf-8')
+        m['Subject'] = email
+        mail = smtplib.SMTP('smtp.gmail.com', 587)
+        mail.ehlo()
+        mail.starttls()
+        mail.login('noreplayfiscae@gmail.com', 'fiscaeunb')
+        mail.sendmail('noreplayfiscae@gmail.com', email, m.as_string())
+    return render(request, 'fale-conosco.html')
 
