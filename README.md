@@ -101,7 +101,7 @@ Crie um super usuário para utilizar a aplicação com o seguinte comando:
 
 <p align="justify">O deploy da aplicação é feito de forma automatizada por meio da integração contínua (Travis CI) que é responsável por verificar a cobertura de teste  e realizar o deploy junto ao servidor de hospedagem Heroku.</p> 
 🌎 Servidor: https://comunityservice.herokuapp.com/
-<br>
+
 
 ## 👤 Equipe de Desenvolvimento
 

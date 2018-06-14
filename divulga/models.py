@@ -26,6 +26,7 @@ class Establishment(models.Model):
     bairro = models.CharField(max_length=50, null=False)
     endereco = models.CharField(max_length=140, null=False)
     cep = models.CharField(max_length=10, null=False)
+    email = models.CharField(max_length=140, null=False)
 
     def __str__(self):
         return self.name
@@ -37,6 +38,7 @@ class CommunityAction(PolymorphicModel):
     close_date = models.DateField()
     description = models.CharField(max_length=500, null=False) 
     establishment = models.ManyToManyField(Establishment)
+
 
     SAUDE = 'SAUDE'
     EDUCACIONAL = 'EDUCACIONAL'
@@ -63,8 +65,12 @@ class CommunityAction(PolymorphicModel):
 class Donation(CommunityAction):
     item_name = models.CharField(max_length=50, null=False)
     amount = models.IntegerField()
+    email = models.CharField(max_length=140, null=False)
+
 
 class HealthService(CommunityAction):
     start_hour = models.TimeField()
     close_hour = models.TimeField()
+    email = models.CharField(max_length=140, null=False)
+    
  

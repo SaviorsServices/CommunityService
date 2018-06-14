@@ -1,0 +1,17 @@
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<br>
+<div class="container" style="height: 100px;width: 100px;">
+	<div class="row">
+		<form method="POST">
+        {% csrf_token %}
+            <fieldset>
+                <input type="text" id="nome" name="nome" class="input-block-level" placeholder="Nome">
+                <input type="text" id="email" name="email" class="input-block-level" placeholder="Email">
+                <textarea rows="3" id="mensagem" name="mensagem" class="input-block-level" placeholder="Mensagem"></textarea>
+                <button type="submit" class="btn btn-warning pull-right">Submit</button>
+            </fieldset>
+        </form>
+	</div>
+</div>
