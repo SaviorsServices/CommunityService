@@ -57,7 +57,7 @@ def servicolist(request):
     doacao = Donation.objects.all()
     return render(request, 'servicolist.html', {'estabelecimentos':estabelecimentos,'saude':saude,'doacao':doacao})
 
-
+@login_required
 def create_establishment(request):
     title = "Cadastrar Estabelecimento"
     if request.method == "POST":
@@ -73,7 +73,8 @@ def create_establishment(request):
 
 
 from .forms import CommunityActionForm, DonationForm, HealthServiceForm, EstablishmentForm 
-    
+
+@login_required 
 def create_health_service(request):
     title = "Cadastrar Serviço"
     if request.method == "POST":
@@ -87,6 +88,7 @@ def create_health_service(request):
         form = HealthServiceForm()
         return render(request, 'establishment.html', {'form': form,'title':title})
 
+@login_required
 def create_donation(request):
     title = "Cadastrar Doação"
     if request.method == "POST":
@@ -100,6 +102,7 @@ def create_donation(request):
         form = DonationForm()
         return render(request, 'establishment.html', {'form': form,'title':title})
 
+@login_required
 def edit_establishment(request, id):
     title = "Editar Estabelecimento"
     establishment = get_object_or_404(Establishment, id=id)
@@ -113,6 +116,7 @@ def edit_establishment(request, id):
         form = EstablishmentForm(instance=establishment)
         return render(request, 'establishment.html', {'form': form,'title':title})
 
+@login_required
 def edit_health_service(request, id):
     title = "Editar Serviço de Saude"
     health_service = get_object_or_404(HealthService, id=id)
@@ -126,7 +130,7 @@ def edit_health_service(request, id):
         form = HealthServiceForm(instance=health_service)
         return render(request, 'establishment.html', {'form': form,'title':title})
 
-
+@login_required
 def edit_donation(request, id):
     title = "Editar Doação"
     donation = get_object_or_404(Donation, id=id)
@@ -140,17 +144,19 @@ def edit_donation(request, id):
         form = DonationForm(instance=donation)
         return render(request, 'establishment.html', {'form': form,'title':title})
 
-
+@login_required
 def delete_establishment(request, id):
     establishment = get_object_or_404(Establishment, id=id)
     establishment.delete()
     return render(request, 'delete.html')
 
+@login_required
 def delete_health_service(request, id):
     health_service = get_object_or_404(HealthService, id=id)
     health_service.delete()
     return render(request, 'delete.html')
 
+@login_required
 def delete_donation(request, id):
     delete_donation = get_object_or_404(Donation, id=id)
     delete_donation.delete()
