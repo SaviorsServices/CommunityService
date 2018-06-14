@@ -11,8 +11,9 @@
         <th>Inicio</th>
         <th>Fim</th>
         <th>Categoria</th>
-        <th>Estabelecimento</th>
-        <th>Fale Conosco</th>
+        <th>Mapa</th>
+
+        <!-- <th>Estabelecimento</th> -->
 
       </tr>
     </thead>
@@ -20,12 +21,13 @@
 	{% for service in services_list %}
 	<tr>
             <td>{{service.id}}</td>
-            <td>{{service.name}}</td>
+            <td><a href="{% url 'perfil' service.id %}">{{service.name}}</a></td>
             <td>{{service.start_date}}</td>
             <td>{{service.close_date}}</td>
             <td>{{service.category}}</td>
-            <td>{{service.establishment}}</td>
-            <td><a href="{% url 'fale-conosco' service.id %}">{{service.email}}</a></td>
+            <td><a href="{% url 'mapa' service.id %}">Localização</a></td>
+
+            <!-- <td>{{service.establishment}}</td> -->
             
 	</tr>
 	{% endfor %}

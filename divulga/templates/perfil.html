@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+{% block content %}
+<br>
+<br>
+<div class="container">
+      <div class="row">
+      <div class="col-md-4  toppad  pull-right col-md-offset-3 ">
+
+       <br>
+
+      </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
+   
+          <div class="panel panel-info">
+            <div class="panel-heading">
+             <h3 class="panel-title">{{servico.name}}</h3>
+            </div>
+            <div class="panel-body" >
+              <div class="row">
+              <div class="col-md-0 col-lg-0 "> <img  width="100px" alt="User Pic" src="http://www.famurs.com.br/site/wp-content/uploads/2018/03/saudeeeee-300x300.jpg" class="img-circle img-responsive"> </div>
+                <div class=" col-md-0 col-lg-9 "> 
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <td>Nome:</td>
+                        <td>{{servico.name}}</td>
+                      </tr>
+                      <tr>
+                        <td>Data de início:</td>
+                        <td>{{servico.start_date}}</td>
+                      </tr>
+                      <tr>
+                        <td>Data de término:</td>
+                        <td>{{servico.close_date}}</td>
+                      </tr>
+                   
+                         <tr>
+                             <tr>
+                        <td>Descrição:</td>
+                        <td>{{servico.description}}</td>
+                      </tr>
+                        <tr>
+                        <td>Categoria:</td>
+                        <td>{{servico.category}}</td>
+                      </tr>
+                      <tr>
+                        <td>Email</td>
+                        <td>{{servico.email}}</td>
+      
+                     
+                    </tbody>
+                  </table>
+             
+                </div>
+              </div>
+            </div>
+                 <div class="panel-footer" align="center">
+                        <a  href="{% url 'fale-conosco' servico.id %}" data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i>Fale conosco</a>
+                        <a data-original-title="Voltar" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-remove"></i>Voltar</a>
+                    </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock content %}

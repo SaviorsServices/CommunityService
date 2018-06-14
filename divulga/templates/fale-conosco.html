@@ -1,17 +1,27 @@
+{% extends 'base.html' %}
+
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <br>
-<div class="container" style="height: 200px;width: 200px;">
+
+{% block content %}
+
+<div class="container" style="width: 30%;">
 	<div class="row">
 		<form method="POST">
         {% csrf_token %}
-            <fieldset>
-                <input type="text" id="nome" name="nome" class="input-block-level" placeholder="Nome">
-                <input  value="{{servico.email}}" type="text" id="email" name="email" class="input-block-level">
-                <textarea rows="3" id="mensagem" name="mensagem" class="input-block-level" placeholder="Mensagem"></textarea>
-                <button type="submit" class="btn btn-warning pull-right">Submit</button>
-            </fieldset>
+            <!-- <fieldset> -->
+                <br> <br> <br>
+            <tr>
+                <input style="border-radius: 4px;height: 30px;width: 400px;" type="text" id="nome" name="nome" class="input-block-level" placeholder="Nome"><br> <br>
+                <input style="border-radius: 4px;height: 30px;width: 400px;" value="{{servico.email}}" type="text" id="email" name="email" class="input-block-level"><br><br>
+                <textarea rows="5" id="mensagem" name="mensagem" class="input-block-level" placeholder="Mensagem" style="border-radius: 4px;width: 400px;"></textarea><br><br>
+                <a href="{% url 'perfil' servico.id %}">Voltar</a>
+                <button type="submit" class="btn btn-warning pull-right">Enviar </button> 
+            </tr>
+            <!-- </fieldset> -->
         </form>
 	</div>
 </div>
+{% endblock content %}
