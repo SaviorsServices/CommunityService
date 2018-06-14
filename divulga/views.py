@@ -169,18 +169,8 @@ def list_donation(request):
     donations = Donation.objects.all()
     return render(request, 'list_donation.html', {"donations": donations})
 
-def enviar(nome, email, texto):
-    # mensagem = MIMEText(texto)
-    # mensagem.set_charset('utf-8')
-    mensagem['Subject'] = email
-    mensagem = 'Mensagem de:'+nome+'\n'+mensagem
-    mail = smtplib.SMTP('smtp.gmail.com', 587)
-    mail.ehlo()
-    mail.starttls()
-    mail.login('noreplayfiscae@gmail.com', 'fiscaeunb')
-    mail.sendmail('noreplayfiscae@gmail.com', email, mensagem.as_string())
-
-def fale_conosco(request):
+def fale_conosco(request, id):
+    servico = HealthService.objects.get(id=id)
     if request.method == "POST":
         nome = request.POST['nome']
         email = request.POST['email']
@@ -193,5 +183,5 @@ def fale_conosco(request):
         mail.starttls()
         mail.login('noreplayfiscae@gmail.com', 'fiscaeunb')
         mail.sendmail('noreplayfiscae@gmail.com', email, m.as_string())
-    return render(request, 'fale-conosco.html')
+    return render(request, 'fale-conosco.html', {"servico": servico})
 

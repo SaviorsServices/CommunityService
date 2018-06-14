@@ -12,6 +12,8 @@
         <th>Fim</th>
         <th>Categoria</th>
         <th>Estabelecimento</th>
+        <th>Fale Conosco</th>
+
       </tr>
     </thead>
     <tbody>
@@ -23,8 +25,8 @@
             <td>{{service.close_date}}</td>
             <td>{{service.category}}</td>
             <td>{{service.establishment}}</td>
+            <td><a href="{% url 'fale-conosco' service.id %}">{{service.email}}</a></td>
             
-
 	</tr>
 	{% endfor %}
     </tbody>
