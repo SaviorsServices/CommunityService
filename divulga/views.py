@@ -35,19 +35,19 @@ import smtplib
 def mapa(request, id):
     latitude = 0
     longitude = 0
-    if request.method == "POST":
-        chave = "AIzaSyDroa8JCUm2JfRZ_7eVMb4Fqx8ufr0Mz_A"
-        div = Establishment.objects.get(id=id)
-        address = div.endereco+"+"+div.cidade
-        r = requests.get("https://maps.googleapis.com/maps/api/geocode/json?address="+address+"&key="+chave)
-        if r.status_code == 200:
-            dados = json.loads(r.content)
-            latitude = dados["results"][0]["geometry"]["location"]["lat"]
-            longitude = dados["results"][0]["geometry"]["location"]["lng"]
+    # if request.method == "POST":
+    chave = "AIzaSyDroa8JCUm2JfRZ_7eVMb4Fqx8ufr0Mz_A"
+    div = Establishment.objects.get(id=id)
+    address = div.endereco+"+"+div.cidade
+    r = requests.get("https://maps.googleapis.com/maps/api/geocode/json?address="+address+"&key="+chave)
+    if r.status_code == 200:
+        dados = json.loads(r.content)
+        latitude = dados["results"][0]["geometry"]["location"]["lat"]
+        longitude = dados["results"][0]["geometry"]["location"]["lng"]
             #print(latitude)
             #print(longitude)
-        return render(request, 'mapa.html', {'latitude':latitude, 'longitude': longitude})
-    return render(request, 'index.html')
+    return render(request, 'mapa.html', {'latitude':latitude, 'longitude': longitude})
+    # return render(request, 'index.html')
 
 
 
@@ -169,18 +169,8 @@ def list_donation(request):
     donations = Donation.objects.all()
     return render(request, 'list_donation.html', {"donations": donations})
 
-def enviar(nome, email, texto):
-    # mensagem = MIMEText(texto)
-    # mensagem.set_charset('utf-8')
-    mensagem['Subject'] = email
-    mensagem = 'Mensagem de:'+nome+'\n'+mensagem
-    mail = smtplib.SMTP('smtp.gmail.com', 587)
-    mail.ehlo()
-    mail.starttls()
-    mail.login('noreplayfiscae@gmail.com', 'fiscaeunb')
-    mail.sendmail('noreplayfiscae@gmail.com', email, mensagem.as_string())
-
-def fale_conosco(request):
+def fale_conosco(request, id):
+    servico = HealthService.objects.get(id=id)
     if request.method == "POST":
         nome = request.POST['nome']
         email = request.POST['email']
@@ -193,5 +183,8 @@ def fale_conosco(request):
         mail.starttls()
         mail.login('noreplayfiscae@gmail.com', 'fiscaeunb')
         mail.sendmail('noreplayfiscae@gmail.com', email, m.as_string())
-    return render(request, 'fale-conosco.html')
+    return render(request, 'fale-conosco.html', {"servico": servico})
 
+def perfil(request, id):
+    servico = HealthService.objects.get(id=id)
+    return render(request, 'perfil.html', {"servico":servico})
