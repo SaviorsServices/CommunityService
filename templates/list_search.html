@@ -1,39 +1,48 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
+{% load staticfiles %}
+
+
+{% block header %}
+  <link rel="stylesheet" type="text/css" href="{% static "css/timeline.css" %}" />
+{% endblock %}
 
 {% block content%}
 
-<table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Id</th>
-        <th>Nome</th>
-        <th>Inicio</th>
-        <th>Fim</th>
-        <th>Categoria</th>
-        <th>Mapa</th>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 
-        <!-- <th>Estabelecimento</th> -->
+<div class="container">
+    <div class="page-header text-center">
+        <h1 id="timeline">Lista de Serviços</h1>
+    </div>
+    <ul class="timeline">
+      {% for service in services_list %} 
+        {% if forloop.counter|divisibleby:2 %}
+          <li>
+        {% else %}
+          <li class="timeline-inverted">
+        {% endif %}
+        <div class="timeline-badge primary"><a><i class="glyphicon glyphicon-record" rel="tooltip" title="11 hours ago via Twitter" id=""></i></a></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+            </div>
+            <div class="timeline-body">
+              <h2>{{service.name}}</h2>
+              <p>{{service.description}}</p>
+              
+            </div>
+            <div class="timeline-footer">
+                <a class="pull-left" href="{% url 'perfil' service.id %}">Continuar Lendo</a>
+                <a class="pull-right" href="{% url 'mapa' service.id %}">Localização</a>
+            </div>
+          </div>
+        </li> 
+        {% endfor %}
+    </ul>
+</div>
 
-      </tr>
-    </thead>
-    <tbody>
-	{% for service in services_list %}
-	<tr>
-            <td>{{service.id}}</td>
-            <td><a href="{% url 'perfil' service.id %}">{{service.name}}</a></td>
-            <td>{{service.start_date}}</td>
-            <td>{{service.close_date}}</td>
-            <td>{{service.category}}</td>
-            <td><a href="{% url 'mapa' service.id %}">Localização</a></td>
-
-            <!-- <td>{{service.establishment}}</td> -->
-            
-	</tr>
-	{% endfor %}
-    </tbody>
-  </table>
-
-    <h1>{{service}}</h1>
-    
+   
 {% endblock content %}
