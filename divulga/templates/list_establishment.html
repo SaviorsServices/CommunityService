@@ -4,6 +4,9 @@
 {% block content%}
 
 <table class="table table-striped">
+  <br><br>
+  <a href="{% url 'create_establishment' %}" class="btn btn-success btn-block" role="button">Cadastrar estabelecimento</a>
+
     <thead>
       <tr>
         <th>Id</th>
@@ -25,5 +28,5 @@
   </table>
 
     <h1>{{establishment}}</h1>
-    
+
 {% endblock content %}
