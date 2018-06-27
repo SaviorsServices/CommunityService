@@ -4,6 +4,9 @@
 {% block content%}
 
 <table class="table table-striped">
+  <br><br>
+  <a href="{% url 'create_donation' %}" class="btn btn-success btn-block" role="button">Cadastrar doação</a>
+
     <thead>
       <tr>
         <th>Id</th>
@@ -23,5 +26,5 @@
   </table>
 
     <h1>{{establishment}}</h1>
-    
+
 {% endblock content %}

@@ -4,6 +4,11 @@
 {% block content%}
 
 <table class="table table-striped">
+
+  <br><br>
+  <a href="{% url 'create_health_service' %}" class="btn btn-success btn-block" role="button">Cadastrar serviço</a>
+
+
     <thead>
       <tr>
         <th>Id</th>
@@ -23,5 +28,5 @@
   </table>
 
     <h1>{{establishment}}</h1>
-    
+
 {% endblock content %}
