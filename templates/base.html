@@ -55,16 +55,6 @@
                 <a class="dropdown-item" href="{% url 'list_establishment' %}">Estabelecimentos</a>
               </div>
             </li>
-
-            <!-- Perfil -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><strong>{{ user.username }}</strong></a>
-              <div class="dropdown-menu" aria-labelledby="dropdown01">
-                <a class="dropdown-item" href="{% url 'index' %}">Editar</a>
-                <a class="dropdown-item" href="{% url 'logout' %}">Sair</a>
-              </div>
-            </li>
-
           {% else %}
               <li class="nav-item">
                   <a class="nav-link" href="{% url 'login' %}">Entrar</a>
@@ -78,10 +68,26 @@
           {% endif %}
         </ul>
 
+        <ul class="navbar-nav mr-right">
+          {% if user.is_authenticated %}
+            <!-- Perfil -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><strong>{{ user.username }}</strong></a>
+              <div class="dropdown-menu" aria-labelledby="dropdown01">
+                <a class="dropdown-item" href="{% url 'index' %}">Editar</a>
+                <a class="dropdown-item" href="{% url 'logout' %}">Sair</a>
+              </div>
+            </li>
+          {% endif %}
+        <ul>
         <!-- Busca -->
-        <form class="form-inline my-2 my-lg-0" >
-          <input class="form-control mr-sm-2" type="text" placeholder="Qual serviço procura?" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+        <form class="form-inline my-2 my-lg-0" method='GET' action='/list_search'>
+          <div class="input-group input-group-newsletter">
+            <input type="text" name="q" class="form-control" placeholder="Qual serviço procura?" value="{{ request.GET.q }}" aria-label="busca" aria-describedby="basic-addon">
+            <div class="input-group-append">
+              <input type="submit" value="Buscar" class="btn btn-secondary" href="{% url 'list_donation' %}" type="button"/n>
+             </div>
+          </div>
         </form>
 
       </div>
