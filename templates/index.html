@@ -9,8 +9,9 @@
     <div class="row h-100">
       <div class="col-12 my-auto">
         <div class="masthead-content text-white py-2 py-md-3">
-          <h1 class="mb-3">Community Services</h1>
-          <p class="mb-5">Aqui você encontra diversos pontos de serviços gratuitos, aproveite!
+          <br><br><br><br><br><br><br><br><br><br><br>
+            <h1 class="mb-3" style="text-shadow: 2px 2px gray;">Community Services</h1>
+            <p class="mb-5" style="text-shadow: 1px 1px gray;">Aqui você encontra diversos pontos de serviços gratuitos, aproveite!
             <strong></strong></p>
           <form method='GET' action='/list_search'>
           <div class="input-group input-group-newsletter">
@@ -23,4 +24,30 @@
     </div>
   </div>
 </div>
+
 {% endblock content %}
+
+{% block jumbo %}
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+      <div class="col-md-4">
+        <h2>Serviços</h2>
+        <p>Encontre ou cadastre serviços gratuitos disponíveis na sua região. </p>
+        <p><a class="btn btn-secondary" href="{% url 'list_health_service' %}" role="button">View details &raquo;</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2>Doações</h2>
+        <p>Encontre ou cadastre pontos de doações na sua região.</p>
+        <p><a class="btn btn-secondary" href="{% url 'list_donation' %}" role="button">View details &raquo;</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2>Estabelecimentos</h2>
+        <p>Encontre ou cadastre estabelecimento que oferecem serviços gratuitos na sua região.</p>
+        <p><a class="btn btn-secondary" href="{% url 'servicolist' %}" role="button">View details &raquo;</a></p>
+      </div>
+    </div>
+
+  {% endblock jumbo %}

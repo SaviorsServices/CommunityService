@@ -9,21 +9,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
 
     <title>Community Services</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+    <!-- <link href="../../dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-    <link href="{% static "vendor/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet">
+    <!-- <link href="{% static "vendor/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet"> -->
 
     <!-- Custom styles for this template -->
-    <link href="{% static "css/coming-soon.min.css" %}" rel="stylesheet">
+    <!-- <link href="{% static "css/coming-soon.min.css" %}" rel="stylesheet"> -->
+    <link href="jumbotron.css" rel="stylesheet">
 
-    
+    <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+
     {% block header %}
     {% endblock %}
 
@@ -31,86 +36,102 @@
 
   <body>
     <!-- Barra de navegação -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a class="navbar-brand" href="{% url 'index' %}">Community Service</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <!-- <li class="nav-item active">
-                <a class="nav-link" href="{% url 'index' %}">Início <span class="sr-only">(current)</span></a>
-              </li> -->
-                {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">{{ user.username }}</a>
-                    </li>
-                    <li class="nav-item">              
-                        <a class="nav-link" href="{% url 'logout' %}">Sair</a>
-                    </li>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="{% url 'index' %}">Community Service</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Categorias de Serviço
-                      </a>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          {% if user.is_authenticated %}
 
-                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">     
-                        <a type="text" name="SAUDE" class="dropdown-item" href="/list_search_saude/" value="saude" aria-label="saude" aria-describedby="basic-addon">Saúde</a>
-                        <a type="text" name="EDUCACIONAL" class="dropdown-item" href="/list_search_educacional/" value="educacional" aria-label="saude" aria-describedby="basic-addon">Educacional</a>
-                        <a type="text" name="CORTE DE CABELO" class="dropdown-item" href="/list_search_corte_de_cabelo/" value="saude" aria-label="saude" aria-describedby="basic-addon">Cortes de cabelo</a>
-                        <div class="dropdown-divider"></div>
-                        <a type="text" name="OUTRA CATEGORIA" class="dropdown-item" href="/list_search_outra_categoria/" value="saude" aria-label="saude" aria-describedby="basic-addon">Outras categorias</a> 
-                      </div>
-                    </li>
+            <!-- Items -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Meus itens</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown01">
+                <a class="dropdown-item" href="{% url 'list_health_service' %}">Serviços</a>
+                <a class="dropdown-item" href="{% url 'list_donation' %}">Doações</a>
+                <a class="dropdown-item" href="{% url 'list_establishment' %}">Estabelecimentos</a>
+              </div>
+            </li>
 
-                    <li class="nav-item">              
-                      <a class="nav-link" href="{% url 'create_establishment' %}">Criar estabelecimento</a>
-                  </li>
-                  <li class="nav-item">              
-                    <a class="nav-link" href="{% url 'create_health_service' %}">Cadastrar serviço</a>
-                  </li>
-                    <li class="nav-item">        
-                      <a class="nav-link" href="{% url 'create_donation' %}">Cadastrar doações</a>
-                    </li>
-                      <li class="nav-item">           
-                      <a class="nav-link" href="{% url 'list_establishment' %}">Meus estabelecimentos</a>
-                  </li>
-                  <li class="nav-item">           
-                      <a class="nav-link" href="{% url 'list_health_service' %}">Meus serviços</a>
-                  </li>
-                  <li class="nav-item">           
-                      <a class="nav-link" href="{% url 'list_donation' %}">Minhas doações</a>
-                  </li>
-                  <!-- <li class="nav-item">           
-                      <a class="nav-link" href="{% url 'servicolist' %}">Lista de informações</a>
-                  </li> -->
-                {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'login' %}">Entrar</a>
-                    </li>
-                    <li class="nav-item">
-                      
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="{% url 'signup' %}">Cadastrar</a>
-                    </li>
-                {% endif %}
-              <li class="nav-item dropdown">
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-              </li>
+            <!-- Busca -->
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="text" placeholder="Qual serviço procura?" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+            </form>
+
+            <!-- Perfil -->
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-user"></span> 
+                        <strong>{{ user.username }}</strong>
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <div class="navbar-login" style="width: 305px; padding: 10px;padding-bottom: 0px;">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <p class="text-center">
+                                            <span class="glyphicon glyphicon-user icon-size"></span>
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <p class="text-left"><strong>{{ user.username }}</strong></p>
+                                        <p class="text-left small">{{ user.email }}</p>
+                                        <p class="text-left">
+                                            <a href="#" class="btn btn-primary btn-block btn-sm">Editar perfil</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="navbar-login navbar-login-session" style="padding: 10px;padding-bottom: 0px;padding-top: 0px;">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <p>
+                                            <a href="{% url 'logout' %}" class="btn btn-danger btn-block">Sair</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
             </ul>
-          </div>
-        </nav>
 
-  <!-- Fim da barra de navegação -->
-    
-    {% block content %}
+          {% else %}
+              <li class="nav-item">
+                  <a class="nav-link" href="{% url 'login' %}">Entrar</a>
+              </li>
+              <li class="nav-item">
+
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'signup' %}">Cadastrar</a>
+              </li>
+          {% endif %}
+        </ul>
+      </div>
+    </nav> <!-- Fim da barra de navegação -->
+
+    <main role="main">
+      <div class="jumbotron jumbotron-fluid" style="background: url("")">
+        <div class="container">
+          {% block content %}
+          {% endblock %}
+        </div>
+      </div>
+    </main>
+    {% block jumbo %}
     {% endblock %}
-    
+    </div>
+
     <!-- Bootstrap core JavaScript -->
     <script src="{% static "vendor/jquery/jquery.min.js" %}"></script>
     <script src="{% static "vendor/bootstrap/js/bootstrap.bundle.min.js" %}"></script>
