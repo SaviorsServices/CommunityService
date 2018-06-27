@@ -2,7 +2,7 @@ from django import forms
 from django.forms import ModelForm
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
-from .models import CommunityAction, Donation, HealthService, Establishment
+from .models import CommunityAction, Donation, HealthService, Establishment, VoluntaryService
 
 class CommunityActionForm(ModelForm):
     class Meta:
@@ -99,4 +99,30 @@ class EstablishmentForm(ModelForm):
             'bairro': 'Bairro',
             'endereco': 'Endereço',
             'cep': 'cep'
+        }
+
+class VoluntaryServiceForm(ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(VoluntaryServiceForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_id = 'id-exampleForm'
+        self.helper.form_class = 'blueForms'
+        self.helper.form_method = 'post'
+        self.helper.form_action = ''
+
+        self.helper.add_input(Submit('submit', 'Enviar'))
+
+
+
+    class Meta:
+        model = VoluntaryService
+        fields = '__all__'
+        labels = {
+            'name': 'nome',
+            'telefone': 'Telefone para contato',
+            'cidade': 'Cidade',
+            'bairro': 'Bairro',
+            'endereco': 'Endereço',
+            'description': 'Descreva quais serviços voluntário você deseja ajudar', 
+            'email': 'Email para contato'
         }

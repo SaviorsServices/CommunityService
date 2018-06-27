@@ -5,8 +5,8 @@ from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
-from .forms import CommunityActionForm, DonationForm, HealthServiceForm, EstablishmentForm 
-from .models import Establishment, HealthService, Donation
+from .forms import CommunityActionForm, DonationForm, HealthServiceForm, EstablishmentForm , VoluntaryServiceForm
+from .models import Establishment, HealthService, Donation, VoluntaryService
 # from .models import Divulgacoes
 import requests
 
@@ -71,6 +71,19 @@ def create_establishment(request):
         form = EstablishmentForm()
         return render(request, 'establishment.html', {'form': form,'title':title})
 
+@login_required
+def create_voluntary(request):
+    title = "Cadastrar Voluntário"
+    if request.method == "POST":
+        form = VoluntaryServiceForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse("index"))
+        return render(request, 'establishment.html', {'form': form,'title':title})
+
+    else:
+        form =  VoluntaryServiceForm()
+        return render(request, 'establishment.html', {'form': form,'title':title})
 
 from .forms import CommunityActionForm, DonationForm, HealthServiceForm, EstablishmentForm 
 
@@ -145,6 +158,20 @@ def edit_donation(request, id):
         return render(request, 'establishment.html', {'form': form,'title':title})
 
 @login_required
+def edit_voluntary(request, id):
+    title = "Editar Voluntário"
+    voluntary = get_object_or_404(VoluntaryService, id=id)
+    if request.method == "POST":
+        form = VoluntaryServiceForm(request.POST, instance=voluntary)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('index'))
+        return render(request, 'establishment.html', {'form': form,'title':title})
+    else:
+        form = VoluntaryServiceForm(instance=voluntary)
+        return render(request, 'establishment.html', {'form': form,'title':title})
+
+@login_required
 def delete_establishment(request, id):
     establishment = get_object_or_404(Establishment, id=id)
     establishment.delete()
@@ -162,6 +189,12 @@ def delete_donation(request, id):
     delete_donation.delete()
     return render(request, 'delete.html')
 
+@login_required
+def delete_voluntary(request, id):
+    delete_voluntary = get_object_or_404(VoluntaryService, id=id)
+    delete_voluntary.delete()
+    return render(request, 'delete.html')
+
 def list_establishment(request):
     establishments = Establishment.objects.all()
     print(establishments)
@@ -174,6 +207,11 @@ def list_health_service(request):
 def list_donation(request):
     donations = Donation.objects.all()
     return render(request, 'list_donation.html', {"donations": donations})
+
+def list_voluntary(request):
+    volunteers = VoluntaryService.objects.all()
+    print(volunteers)
+    return render(request, 'list_voluntary.html', {"volunteers": volunteers})
 
 def fale_conosco(request, id):
     servico = HealthService.objects.get(id=id)
