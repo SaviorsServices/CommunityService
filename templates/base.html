@@ -63,16 +63,21 @@
                       </div>
                     </li>
 
-                    <li class="nav-item">              
-                      <a class="nav-link" href="{% url 'create_establishment' %}">Criar estabelecimento</a>
-                  </li>
-                  <li class="nav-item">              
-                    <a class="nav-link" href="{% url 'create_health_service' %}">Cadastrar serviço</a>
-                  </li>
-                    <li class="nav-item">        
-                      <a class="nav-link" href="{% url 'create_donation' %}">Cadastrar doações</a>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Cadastrar
+                      </a>
+
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">     
+                        
+                        <a class="dropdown-item" href="{% url 'create_establishment' %}">Cadastrar estabelecimento</a>
+                        <a class="dropdown-item" href="{% url 'create_health_service' %}">Cadastrar serviço</a>
+                        <div class="dropdown-divider"></div> 
+                        <a class="dropdown-item" href="{% url 'create_donation' %}">Cadastrar doações</a>
+                      </div>
                     </li>
-                      <li class="nav-item">           
+
+                  <li class="nav-item">           
                       <a class="nav-link" href="{% url 'list_establishment' %}">Meus estabelecimentos</a>
                   </li>
                   <li class="nav-item">           
@@ -80,6 +85,12 @@
                   </li>
                   <li class="nav-item">           
                       <a class="nav-link" href="{% url 'list_donation' %}">Minhas doações</a>
+                  </li>
+                  <li class="nav-item">           
+                    <a class="nav-link" href="{% url 'list_voluntary' %}">Voluntários</a>
+                  </li>
+                  <li class="nav-item">              
+                    <a class="nav-link" href="{% url 'create_voluntary' %}">Deseja ser voluntário?</a>
                   </li>
                   <!-- <li class="nav-item">           
                       <a class="nav-link" href="{% url 'servicolist' %}">Lista de informações</a>

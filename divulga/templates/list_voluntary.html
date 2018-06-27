@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content%}
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Email para contato</th>
+        <th>Descricão de Serviço</th>
+        <th>Telefone</th>
+        <th>Cidade</th>
+      </tr>
+    </thead>
+    <tbody>
+	{% for voluntary in volunteers %}
+	<tr>
+            <td>{{voluntary.id}}</td>
+            <td>{{voluntary}}</td>
+            <td>{{voluntary.email}}</td>
+            <td>{{voluntary.description}}</td>
+            <td>{{voluntary.telefone}}</td>
+            <td>{{voluntary.cidade}}</td>
+	    <td><a href="{% url 'edit_voluntary' voluntary.id %}" class="glyphicon glyphicon-pencil">Editar</a></td>
+	    <td><a href="{% url 'delete_voluntary' voluntary.id %}" class="glyphicon glyphicon-trash">Remover</a></td>
+	</tr>
+	{% endfor %}
+    </tbody>
+  </table>
+
+    <h1>{{establishment}}</h1>
+    
+{% endblock content %}
