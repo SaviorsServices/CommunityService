@@ -16,10 +16,10 @@
 
 <div class="container">
     <div class="page-header text-center">
-        <h1 id="timeline">Lista de Serviços</h1>
+        <h1 id="timeline">Lista de {{ name }}</h1>
     </div>
     <ul class="timeline">
-      {% for service in services_list %} 
+      {% for service in services_list %}
         {% if forloop.counter|divisibleby:2 %}
           <li>
         {% else %}
@@ -32,17 +32,17 @@
             <div class="timeline-body">
               <h2>{{service.name}}</h2>
               <p>{{service.description}}</p>
-              
+
             </div>
             <div class="timeline-footer">
                 <a class="pull-left" href="{% url 'perfil' service.id %}">Continuar Lendo</a>
                 <a class="pull-right" href="{% url 'mapa' service.id %}">Localização</a>
             </div>
           </div>
-        </li> 
+        </li>
         {% endfor %}
     </ul>
 </div>
 
-   
+
 {% endblock content %}

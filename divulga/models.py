@@ -17,6 +17,7 @@ from polymorphic.models import PolymorphicModel
 #     #data = models.DateTimeField(auto_now=False, auto_now_add=False)
 #     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
+
 class Establishment(models.Model):
     name = models.CharField(max_length=50, null=False)
     openHour = models.TimeField()
@@ -36,9 +37,8 @@ class CommunityAction(PolymorphicModel):
     name = models.CharField(max_length=50, null=False)
     start_date = models.DateField()
     close_date = models.DateField()
-    description = models.CharField(max_length=500, null=False) 
+    description = models.CharField(max_length=500, null=False)
     establishment = models.ManyToManyField(Establishment)
-
 
     SAUDE = 'SAUDE'
     EDUCACIONAL = 'EDUCACIONAL'
@@ -72,5 +72,3 @@ class HealthService(CommunityAction):
     start_hour = models.TimeField()
     close_hour = models.TimeField()
     email = models.CharField(max_length=140, null=False)
-    
- 
