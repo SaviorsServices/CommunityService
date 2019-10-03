@@ -12,7 +12,7 @@
   
 ## ℹ️ Sobre o projeto
 
-Projeto desenvolvido durante a disciplina de Desenvolvimento de Software da Universidade de Brasília, campus Gama. Com o objetivo de divulgar pontos de atendimentos médicos gratuitos. <br>
+Projeto desenvolvido durante a disciplina de Desenvolvimento de Software da Universidade de Brasília, campus Gama. Com o objetivo de divulgar pontos de atendimentos médicos gratuitos e outros serviços que possam contribuir para uma melhor qualidade de vida para a população de rendas inferiores do Distrito Federal. <br>
 
 ## ℹ️ Tecnologias
 
