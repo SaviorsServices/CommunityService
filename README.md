@@ -9,7 +9,6 @@
   <a href="https://codeclimate.com/github/SaviorsServices/CommunityService"><img src="https://codeclimate.com/github/SaviorsServices/CommunityService/badges/issue_count.svg" alt="Issue Count"></a> 
 
 <br>
-  
 ## ℹ️ Sobre o projeto
 
 Projeto desenvolvido durante a disciplina de Desenvolvimento de Software da Universidade de Brasília, campus Gama. Com o objetivo de divulgar pontos de atendimentos médicos gratuitos. <br>
